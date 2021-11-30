@@ -1,5 +1,6 @@
 package com.bridgelabz.hellomessagingapp.controller;
 
+import com.bridgelabz.hellomessagingapp.dto.User;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -22,5 +23,11 @@ public class MessagingController {
     @GetMapping("/param/{name}")
     public String sayHelloParam(@PathVariable String name) {
         return "Hello " + name + "!";
+    }
+
+    //http://localhost:8080/hello/post
+    @PostMapping("/post")
+    public String sayHello(@RequestBody User user) {
+        return "Hello " + user.getFirstName() + " " + user.getLastName() + "!";
     }
 }

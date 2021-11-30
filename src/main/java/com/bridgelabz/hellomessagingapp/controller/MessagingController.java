@@ -17,4 +17,10 @@ public class MessagingController {
     public String sayHello(@RequestParam(value = "name") String name) {
         return "Hello " + name + "!";
     }
+
+    //http://localhost:8080/hello/param/Kunal
+    @GetMapping("/param/{name}")
+    public String sayHelloParam(@PathVariable String name) {
+        return "Hello " + name + "!";
+    }
 }

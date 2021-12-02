@@ -1,11 +1,15 @@
 package com.bridgelabz.hellomessagingapp.controller;
 
 import com.bridgelabz.hellomessagingapp.dto.User;
+import org.slf4j.LoggerFactory;
+import org.slf4j.Logger;
 import org.springframework.web.bind.annotation.*;
+
 
 @RestController
 @RequestMapping("/hello")
 public class MessagingController {
+    Logger logger = LoggerFactory.getLogger(MessagingController.class);
 
     //http://localhost:8080/hello/home
     @RequestMapping(value = {"", "/", "/home"})
